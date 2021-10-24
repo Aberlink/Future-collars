@@ -6,22 +6,25 @@ public class Calculator {
 
     }
 
-    public void sum(double firstArg, double secondArg) {
+    public double sum(double firstArg, double secondArg) {
         double result = firstArg + secondArg;
         System.out.println(result);
+        return result;
     }
 
-    public void substract(double firstArg, double secondArg) {
+    public double subtract(double firstArg, double secondArg) {
         double result = firstArg - secondArg;
         System.out.println(result);
+        return result;
     }
 
-    public void multiply(double firstArg, double secondArg) {
+    public double multiply(double firstArg, double secondArg) {
         double result = firstArg * secondArg;
         System.out.println(result);
+        return result;
     }
 
-    public void divide(double firstArg, double secondArg) {
+    public double divide(double firstArg, double secondArg) {
         if (secondArg == 0) {
         throw new RuntimeException();
         }
@@ -29,6 +32,7 @@ public class Calculator {
         {
             double result = firstArg / secondArg;
             System.out.println(result);
+            return result;
         }
     }
 
