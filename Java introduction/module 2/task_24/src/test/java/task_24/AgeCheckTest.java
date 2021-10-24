@@ -24,6 +24,13 @@ class AgeCheckTest {
         Assertions.assertTrue(AgeCheck.ageCheck(age));
     }
     @Test
+    void ShoudAgeCheck_AgeEighteen () {
+        //given
+        int age = 18;
+        //then
+        Assertions.assertTrue(AgeCheck.ageCheck(age));
+    }
+    @Test
     void ShoudAgeCheck_AgeMinusFive () {
         //given
         int age = -5;
