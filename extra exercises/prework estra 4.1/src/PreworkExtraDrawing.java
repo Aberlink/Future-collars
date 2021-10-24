@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class PreworkExtraDrawing {
 
-    public static void runProgram(String[] args) {
+    public static void main(String[] args) {
 
     }
 
