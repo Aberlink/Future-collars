@@ -1,3 +1,5 @@
+package first.project.task_23;
+
 public class Calculator {
 
     public static void main(String[] args) {
