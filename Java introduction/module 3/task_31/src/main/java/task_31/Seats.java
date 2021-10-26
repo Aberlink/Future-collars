@@ -1,9 +1,9 @@
 package task_31;
 
 public class Seats {
-     protected int number;
-     protected int row;
-     boolean isFree;
+     final private int number;
+     final private int row;
+     private boolean isFree;
 
      public Seats(int number, int row, boolean isFree) {
           this.number = number;
