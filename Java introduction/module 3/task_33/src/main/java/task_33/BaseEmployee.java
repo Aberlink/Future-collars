@@ -2,20 +2,23 @@ package task_33;
 
 public abstract class BaseEmployee {
 
-    private final String name;
-    private final String surname;
-    private final int workStarYear;
-    double baseSalary = 3000;
+    final String name;
+    final String surname;
+    final int workStarYear;
+    int currentYear = 2021;
+
+    protected double BASE_SALARY = 3000d;
 
     public BaseEmployee(String name, String surname, int workStarYear) {
         this.name = name;
         this.surname = surname;
         this.workStarYear = workStarYear;
     }
+
     int experience() {
-        int experience = 2021 - workStarYear;
-        return experience;
+        return currentYear - workStarYear;
     }
+
     abstract double calculateMonthlySalary();
 
 }

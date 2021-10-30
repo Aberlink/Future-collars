@@ -8,7 +8,7 @@ class TicketSeller extends BaseEmployee{
     }
 
     double calculateMonthlySalary() {
-        return baseSalary;
+        return BASE_SALARY;
     }
 }
 
