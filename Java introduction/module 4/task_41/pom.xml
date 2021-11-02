@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>task_41</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>task_45</module>
+    </modules>
 
 
     <properties>

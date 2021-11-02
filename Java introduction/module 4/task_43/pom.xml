@@ -11,6 +11,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>task_43</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>../task_44</module>
+    </modules>
 
     <dependencies>
 

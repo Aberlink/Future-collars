@@ -6,7 +6,7 @@ public class Seats {
      private boolean isFree;
 
      public Seats(int number, int row, boolean isFree) {
-          this.number = number;
+          number = number;
           this.row = row;
           this.isFree = isFree;
      }
