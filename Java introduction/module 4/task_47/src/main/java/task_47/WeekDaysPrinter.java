@@ -5,14 +5,13 @@ import java.util.Locale;
 public class WeekDaysPrinter {
 
     public static void main(String[] args) {
-        dayPrinter();
+
+    System.out.println(printDayVerOne(WeekDaysOperator.MONDAY));
     }
 
-    public static String dayPrinter() {
-        for (WeekDaysOperator weekDaysOperator: WeekDaysOperator.values()) {
-            System.out.println(weekDaysOperator.toString());
-            return weekDaysOperator.toString();}
-        }
+    public static String printDayVerOne(WeekDaysOperator weekDaysOperator) {
+            return weekDaysOperator.toString();
+    }
     }
 
-}
+
