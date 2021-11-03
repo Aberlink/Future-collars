@@ -1,20 +1,22 @@
 public class BillCalculator {
 
-    double billValue;
-    float serviceFee;
-    double discount;
-    short packing;
+
 
     float calculate(double billValue, float serviceFee) {
         return (float) (billValue + serviceFee);
     }
 
-    float calculateWithDiscount(double billValue, float serviceFee, double discount) {
-        return (float) (billValue * discount) + serviceFee;
+    float calculate(double billValue, float serviceFee, double discount) {
+        if (discount == 0) {
+            return (float) (billValue + serviceFee);
+        }
+        else {
+            return (float) (billValue * discount) + serviceFee;
+        }
     }
 
-    float calculateWithPacking(double billValue, float serviceFee, double discount, short packing) {
-        return (float) (billValue * discount) + serviceFee + packing;
+    float calculate(double billValue, float serviceFee, short packing) {
+        return (float) billValue + serviceFee + packing;
     }
 
 }
