@@ -1,8 +1,8 @@
 package task_44;
 
-public class LowerCase implements TextFormatter{
+public class LowerCaseFormatter implements TextFormatter{
 
-    public LowerCase() {
+    public LowerCaseFormatter() {
     }
 
     @Override

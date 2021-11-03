@@ -1,8 +1,8 @@
 package task_44;
 
-public class UpperCase implements TextFormatter {
+public class UpperCaseFormatter implements TextFormatter {
 
-    public UpperCase() {
+    public UpperCaseFormatter() {
     }
 
     @Override

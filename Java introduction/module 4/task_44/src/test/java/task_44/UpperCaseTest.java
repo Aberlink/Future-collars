@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UpperCaseTest {
 
-    UpperCase upperCase = new UpperCase();
+    UpperCaseFormatter upperCaseFormatter = new UpperCaseFormatter();
 
     @Test
-    void formatText() {
+    void formatText_toCapitalLetters() {
         String text = "EnGiNe";
-        Assertions.assertEquals("ENGINE",upperCase.formatText(text));
+        Assertions.assertEquals("ENGINE",upperCaseFormatter.formatText(text));
     }
 }

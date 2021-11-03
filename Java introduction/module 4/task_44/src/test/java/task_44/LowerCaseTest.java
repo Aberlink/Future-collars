@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LowerCaseTest {
 
-    LowerCase lowerCase = new LowerCase();
+    LowerCaseFormatter lowerCaseFormatter = new LowerCaseFormatter();
 
     @Test
-    void formatText() {
+    void formatText_toLowerCaseLetters() {
         String text = "EnGiNe";
-        Assertions.assertEquals("engine", lowerCase.formatText(text));
+        Assertions.assertEquals("engine", lowerCaseFormatter.formatText(text));
     }
 }
