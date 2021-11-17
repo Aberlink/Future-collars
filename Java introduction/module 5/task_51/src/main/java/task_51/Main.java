@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TextCheck textCheck = new TextCheck("Kobyła ma mały bok");
+        TextCheck textCheck = new TextCheck();
 
-        System.out.println(textCheck.textLengthCheck());
-        System.out.println(textCheck.isPalindrome());
+        System.out.println(textCheck.textLengthCheck("Kobyła ma mały bok"));
+        System.out.println(textCheck.isPalindrome("Kobyła ma mały bok"));
 
     }
 }

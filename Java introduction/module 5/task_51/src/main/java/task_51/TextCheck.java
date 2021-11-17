@@ -4,33 +4,26 @@ import java.util.Locale;
 
 public class TextCheck {
 
-    String textGiven;
-
-    public TextCheck(String textGiven) {
-        this.textGiven = textGiven;
+    public TextCheck() {
     }
 
-    boolean isTextNotEmpty(){
-        if (!this.textGiven.isEmpty() && this.textGiven !=null) {
-            return true;
-        }
-        else {
-            return false;
-        }
+
+    boolean isTextNotEmpty(String textGiven){
+        return (textGiven !=null && !textGiven.isEmpty()) ? true : false;
     }
 
-    int textLengthCheck(){
-        if (isTextNotEmpty() == true) {
-            return this.textGiven.length();
+    int textLengthCheck(String textGiven){
+        if (isTextNotEmpty(textGiven) == true) {
+            return textGiven.length();
         }
         else {
             return 0;
         }
     }
 
-    boolean isPalindrome() {
-        if (isTextNotEmpty() == true) {
-            String whitespacesRemoved = this.textGiven.replaceAll("\\s+","").toLowerCase(Locale.ROOT);
+    boolean isPalindrome(String textGiven) {
+        if (isTextNotEmpty(textGiven) == true) {
+            String whitespacesRemoved = textGiven.replaceAll("\\s+","").toLowerCase(Locale.ROOT);
             int length = whitespacesRemoved.length();
             int forward = 0;
             int backward = length - 1;
@@ -47,5 +40,7 @@ public class TextCheck {
             return false;
         }
     }
+
+
 
 }
