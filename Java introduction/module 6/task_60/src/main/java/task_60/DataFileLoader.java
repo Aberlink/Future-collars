@@ -11,9 +11,10 @@ public class DataFileLoader {
 
     DataFileOutput.getFileFilled("Kurs\n" + "Java\n" + "Lekcja 6\n" + "Pliki\n" + "Wyjątki\n" +
                                              "Pliki\n" + "Koniec pliku");
-    DataFileInput.loadDataFromFile();
 
     }
+
+
 
     public static java.net.URI filePath() throws URISyntaxException {
         URL resourcePath = DataFileLoader.class.getResource("/data.txt");
