@@ -11,41 +11,30 @@ import java.util.List;
 
 public class DataInReverseOrder {
 
-    private static int countLines() throws URISyntaxException, IOException {
-
-        try(BufferedReader reader = Files.newBufferedReader(Path.of(DataFileLoader.filePath())))  {
-
-            int lines = 0;
-            while (reader.readLine() != null){
-                lines++;
-            }
-            return lines;
-        }
-    }
-
-    public static <String> List<String> getFileToList() {
+    public static List<String> getFileToList() throws URISyntaxException, IOException {
 
         try (BufferedReader reader = Files.newBufferedReader(Path.of(DataFileLoader.filePath()))) {
 
             ArrayList<String> spreadLines = new ArrayList<>();
+            String temporaryText = reader.readLine();
 
-            for (int i = 0; i <countLines(); i++) {
-                spreadLines.add((String) reader.readLine());
+            while (temporaryText != null) {
+                spreadLines.add(temporaryText);
+                temporaryText = reader.readLine();
             }
             return spreadLines;
-
-    } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
         }
-        return null;
     }
 
-    public static String getFileInReverseOrder() {
+    public static String getFileInReverseOrder() throws URISyntaxException, IOException {
 
-        ArrayList<String> reversedLines =  new ArrayList<>();
-        reversedLines.addAll(getFileToList());
+        ArrayList<String> reversedLines = new ArrayList<>(getFileToList());
 
-        Collections.reverse(reversedLines);
-        return reversedLines.toString();
+        StringBuffer output = new StringBuffer();
+
+        for (int i = reversedLines.size() - 1; i >= 0; i--) {
+            output.append(reversedLines.get(i) + "\n");
+        }
+        return output.toString();
     }
 }
