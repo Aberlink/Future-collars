@@ -7,16 +7,17 @@ import java.util.Arrays;
 
 public class DataFileInput {
 
-    static void loadDataFromFile() throws IOException, URISyntaxException {
+    static String loadDataFromFile() throws IOException, URISyntaxException {
 
         byte[] fileBytes;
 
         try (InputStream input = new FileInputStream(DataFileLoader.filePath().getPath())) {
-
             fileBytes = input.readAllBytes();
-
-            String text = new String(fileBytes);
-            System.out.println(text);
+            return  new String(fileBytes);
         }
+    }
+
+    static void printDataFromFile() throws IOException, URISyntaxException {
+        System.out.println(loadDataFromFile());
     }
 }
