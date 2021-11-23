@@ -14,6 +14,8 @@ public class DataFileLoader {
     DataFileInput.loadDataFromFile();
     DataFileInput.printDataFromFile();
 
+    MarksInFileCounter.printNumberOfMarks();
+
     }
 
     public static java.net.URI filePath() throws URISyntaxException {
