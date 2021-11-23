@@ -16,6 +16,8 @@ public class DataFileLoader {
 
     MarksInFileCounter.printNumberOfMarks();
 
+    System.out.println(WordChecker.isWordPresent("Pliki"));
+
     }
 
     public static java.net.URI filePath() throws URISyntaxException {
