@@ -2,7 +2,7 @@ package task_68;
 
 public class ImportPesel {
 
-    String peselInput;
+    private final String peselInput;
 
     public ImportPesel(String peselInput) {
         this.peselInput = peselInput;
@@ -12,27 +12,18 @@ public class ImportPesel {
         if (peselInput.length() == 11) {
             return true;
         }
-        else throw new RuntimeException("IllegalLengthException");
-    }
-
-    long checkInputType(){
-        try {
-            return Long.parseLong(this.peselInput);
-        }
-        catch (RuntimeException e) {
-            throw new RuntimeException("WrongTypeOfDataException");
-        }
+        else throw new IllegalLengthException("Number should be 11 characters long");
     }
 
     long checkIfNumberIsCorrect(String number){
-        if (number.length() == 11) {
+        if (checkLength() == true) {
             try {
                 return Long.parseLong(number);
-            } catch (NumberFormatException e) {
-                throw new ExtendedExceptions("WrongTypeOfDataException");
+            }
+            catch (NumberFormatException e) {
+                throw new WrongTypeOfDataException("All characters have to be numbers");
             }
         }
-        else throw new ExtendedExceptions("IllegalLengthException");
-
+        else throw new IllegalLengthException("Number should be 11 characters long");
     }
 }
