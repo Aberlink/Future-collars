@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class namesManager {
+public class NamesManager {
 
     public static void main(String[] args) {
 
@@ -29,39 +29,24 @@ public class namesManager {
     protected static List<String> getNamesReplaced (List<String> listToCHeck, String nameToBeReplaced,
                                           String nameToBePlacedInstead) {
 
-        List<String> replacedListOfNames = listToCHeck;
+        for(int i = 0; i < listToCHeck.size(); i++) {
 
-        for(int i = 0; i < replacedListOfNames.size(); i++) {
-
-            if(replacedListOfNames.indexOf(nameToBeReplaced) == i) {
-                replacedListOfNames.remove(i);
-                replacedListOfNames.add(i,nameToBePlacedInstead);
+            if(listToCHeck.indexOf(nameToBeReplaced) == i) {
+                listToCHeck.remove(i);
+                listToCHeck.add(i,nameToBePlacedInstead);
             }
         }
-        return replacedListOfNames;
+        return listToCHeck;
     }
 
     protected static Set<String> getDuplicatesRemoved() {
 
-        Set<String> duplicatesRemoved = new HashSet<>();
-
-        try (BufferedReader reader = Files.newBufferedReader(loadNamesFile())) {
-
-            String nextLine = reader.readLine();
-
-            while (nextLine != null) {
-                duplicatesRemoved.add(nextLine);
-                nextLine = reader.readLine();
-            }
-        } catch (IOException | URISyntaxException e) {
-            duplicatesRemoved.add("");
-            return duplicatesRemoved;
-        }
+        Set<String> duplicatesRemoved = new HashSet<>(importNamesFromFile());
         return  duplicatesRemoved;
     }
 
     private static Path loadNamesFile() throws URISyntaxException {
-        URL namesPath = namesManager.class.getResource("/names.txt");
+        URL namesPath = NamesManager.class.getResource("/names.txt");
         File namesFile = new File(namesPath.toURI());
         return namesFile.toPath();
     }
@@ -80,7 +65,7 @@ public class namesManager {
             }
 
         } catch (IOException | URISyntaxException e) {
-            return List.of();
+            listOfNames.add("");
         }
         return listOfNames;
     }
