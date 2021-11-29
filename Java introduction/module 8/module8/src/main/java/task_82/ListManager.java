@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ListManager implements OwnList{
 
 
-    int[] listToManage = new int[10];
+    int[] listToManage = new int[0];
 
     public ListManager() {
     }
@@ -39,9 +39,7 @@ public class ListManager implements OwnList{
         if(0 <= i && i < listToManage.length) {
             return listToManage[i];
         }
-        else {
             throw new IndexOutOfBoundsException();
-        }
     }
 
     @Override
@@ -68,9 +66,6 @@ public class ListManager implements OwnList{
             listToManage = temporary;
             return index;
         }
-        else {
             throw new IndexOutOfBoundsException();
-        }
-
     }
 }

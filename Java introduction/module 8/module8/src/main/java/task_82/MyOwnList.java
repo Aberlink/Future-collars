@@ -9,15 +9,20 @@ public class MyOwnList {
 
         ListManager listManager = new ListManager();
 
+        listManager.add(1);
         listManager.add(2);
-        listManager.add(0,5);
-        listManager.add(12,5);
+        listManager.add(3);
+        listManager.add(4);
+        listManager.add(5);
+
+        listManager.add(1,20);
+        listManager.add(4,50);
 
 
         System.out.println(listManager.size());
-        System.out.println(listManager.get(12));
+        System.out.println(listManager.get(4));
         System.out.println(listManager.isEmpty());
-        System.out.println(listManager.remove(12));
+        System.out.println(listManager.remove(4));
         System.out.println(Arrays.toString(listManager.listToManage));
     }
 }
