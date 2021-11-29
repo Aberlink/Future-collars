@@ -23,6 +23,5 @@ public class MyOwnList {
         System.out.println(listManager.get(4));
         System.out.println(listManager.isEmpty());
         System.out.println(listManager.remove(4));
-        System.out.println(Arrays.toString(listManager.listToManage));
     }
 }

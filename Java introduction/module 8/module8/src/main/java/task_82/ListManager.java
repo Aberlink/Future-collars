@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ListManager implements OwnList{
 
 
-    int[] listToManage = new int[0];
+    private int[] listToManage = new int[0];
 
     public ListManager() {
     }
@@ -17,14 +17,12 @@ public class ListManager implements OwnList{
 
     @Override
     public boolean isEmpty() {
-        boolean check = true;
-        for(int i = 0; i < listToManage.length; i++) {
-            if(listToManage[i] != 0){
-                check = false;
-                break;
-            }
+        if(size() == 0) {
+            return true;
         }
-        return check;
+        else {
+            return false;
+        }
     }
 
     @Override
