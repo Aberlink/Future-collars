@@ -1,6 +1,10 @@
 package task_84;
 
-public class Person {
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Person  implements Comparable<Person>{
 
     String name;
     String surname;
@@ -14,5 +18,10 @@ public class Person {
         this.birthYear = birthYear;
         this.height = height;
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(this.birthYear, o.birthYear);
     }
 }
