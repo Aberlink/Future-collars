@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Crew {
 
-    private static final List<Person> crew = new ArrayList<>();
+    private static final List<Person> crew = new LinkedList<>();
 
     public static void main(String[] args) {
 
@@ -34,14 +34,9 @@ public class Crew {
         crew.sort(compareByAge.reversed());
     }
 
-    private static List<Person> getCrew(Person person) {
-        crew.add(person);
-        return crew;
-    }
 
     static void fillCrew(String name, String surname, int birthYear, int height, double weight) {
-        Person p = new Person(name, surname, birthYear,height,weight);
-        getCrew(p);
+        crew.add(new Person(name, surname, birthYear,height,weight));
         sortByAge();
     }
 }
