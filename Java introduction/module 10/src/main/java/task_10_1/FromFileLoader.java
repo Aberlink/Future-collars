@@ -1,8 +1,9 @@
 package task_10_1;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -10,13 +11,14 @@ import java.util.List;
 
 public class FromFileLoader {
 
+    List<PhoneBook> phoneBook = new ArrayList<>();
+
     public void loadBookFromFile() {
 
-        List<PhoneBook> phoneBook = new ArrayList<>();
 
-        File book = new File("src/main/resources/book.csv");
+        URL url = FromFileLoader.class.getResource("/book.csv");
 
-        try (BufferedReader readBook = Files.newBufferedReader(Path.of(book.getPath()))) {
+        try (BufferedReader readBook = Files.newBufferedReader(Path.of(url.toURI()))) {
 
             String nextLine = readBook.readLine();
 
@@ -25,12 +27,10 @@ public class FromFileLoader {
                 PhoneBook nextPosition = addNextPosition(separatedData);
                 phoneBook.add(nextPosition);
                 nextLine = readBook.readLine();
-
             }
-        } catch (IOException e) {
-            System.out.println("File not found");
+        } catch (IOException | URISyntaxException e) {
+            System.out.println("file load error");
         }
-
     }
 
     private PhoneBook addNextPosition(String[] data) {

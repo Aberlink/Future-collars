@@ -1,12 +1,6 @@
 package task_10_1;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class PhoneBook {
 
