@@ -37,14 +37,16 @@ public class PhoneBookListManager {
     }
 
     private PhoneBook addNextPosition(String[] data) {
-        String address = data[0];
-        String fullName = data[1];
-        String phoneNumber = data[2];
 
+        Optional<String> address = Optional.ofNullable(data[0]);
+        Optional<String> fullName = Optional.ofNullable(data[1]);
+        String phoneNumber = data[2];
         return new PhoneBook(address, fullName, phoneNumber);
+
     }
 
-    protected PhoneBook findByName(String nameToBeFound) {
+    protected PhoneBook findByName(Optional<String> nameToBeFound) {
+
         for (PhoneBook person : phoneBookList) {
             if (person.getFULLNAME().equals(nameToBeFound)) {
                 return person;

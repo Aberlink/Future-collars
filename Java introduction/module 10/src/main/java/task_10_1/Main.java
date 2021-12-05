@@ -7,7 +7,7 @@ public class Main {
         PhoneBookListManager phoneBookListManager = new PhoneBookListManager();
         phoneBookListManager.loadBookFromFile();
 
-        phoneBookListManager.findByName("Roman Chudy");
+        phoneBookListManager.findByName(java.util.Optional.of("Jan Kowalski"));
 
     }
 }
