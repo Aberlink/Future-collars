@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FromFileLoader fromFileLoader = new FromFileLoader();
-        fromFileLoader.loadBookFromFile();
+        PhoneBookListManager phoneBookListManager = new PhoneBookListManager();
+        phoneBookListManager.loadBookFromFile();
 
-        System.out.println(String.valueOf(fromFileLoader.phoneBook.get(4)));
+        phoneBookListManager.findByName("Roman Chudy");
 
     }
 }
